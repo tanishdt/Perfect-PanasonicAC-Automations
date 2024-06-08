@@ -1,0 +1,56 @@
+metadata:
+  name: PANASONIC AC AUTOMATIONS - DT ROOM
+  description: Set DT Room AC
+automations:
+  - starters:
+      - type: device.state.OnOff
+        # Comment: The basic on and off functionality for any device that has binary on and off, including plugs and switches as well as many future devices.
+        state: on
+        is: true
+        device: PANASONIC AC - DT Room
+    actions:
+      - type: device.command.ThermostatTemperatureSetpoint
+        # Comment: Set the thermostat temperature setpoint to 24.0°C for the PANASONIC AC - DT Room.
+        devices:
+          - PANASONIC AC - DT Room
+        thermostatTemperatureSetpoint: 24.0C
+      - type: time.delay
+        # Comment: Delay for 1 second.
+        for: 1sec
+      - type: device.command.SetFanSpeed
+        # Comment: Set the fan speed to high for the PANASONIC AC - DT Room.
+        devices:
+          - PANASONIC AC - DT Room
+        fanSpeed: high
+      - type: time.delay
+        # Comment: Delay for 15 minutes.
+        for: 15min
+      - type: device.command.SetFanSpeed
+        # Comment: Set the fan speed to low for the PANASONIC AC - DT Room.
+        devices:
+          - PANASONIC AC - DT Room
+        fanSpeed: low
+      - type: time.delay
+        # Comment: Delay for 15 minutes.
+        for: 15min
+      - type: device.command.ThermostatTemperatureSetpoint
+        # Comment: Set the thermostat temperature setpoint to 26.0°C for the PANASONIC AC - DT Room.
+        devices:
+          - PANASONIC AC - DT Room
+        thermostatTemperatureSetpoint: 26.0C
+      - type: time.delay
+        # Comment: Delay for 15 minutes.
+        for: 15min
+      - type: device.command.SetFanSpeed
+        # Comment: Set the fan speed to low for the PANASONIC AC - DT Room.
+        devices:
+          - PANASONIC AC - DT Room
+        fanSpeed: low
+      - type: time.delay
+        # Comment: Delay for 15 minutes.
+        for: 15min
+      - type: device.command.SetFanSpeed
+        # Comment: Set the fan speed to quiet for the PANASONIC AC - DT Room.
+        devices:
+          - PANASONIC AC - DT Room
+        fanSpeed: quiet
