@@ -1,0 +1,1 @@
+"# Perfect-PanasonicAC-Automations" 
